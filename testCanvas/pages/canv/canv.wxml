@@ -1,4 +1,4 @@
 <!--pages/canv/canv.wxml-->
 <text>pages/canv/canv.wxml</text>
-<canvas type="2d" id="shareCanvas" width="126" height="126"></canvas>
+<canvas type="2d" id="shareCanvas" width="512" height="512"></canvas>
 <button bindtap="click">Click to call "run" method</button>
