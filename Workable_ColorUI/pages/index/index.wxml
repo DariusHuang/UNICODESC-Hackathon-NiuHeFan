@@ -1,7 +1,7 @@
 <!--玩家信息-->
 <view class="justify-start cu-bar bg-white solid-bottom">
       <view class="cu-avatar round" style="background-image:url({{userInfo.avatarUrl}});"></view>
-      <text>-{{playerLevel}}</text>
+      <text> {{playerLevel}}</text>
 </view>
 
 <!--文本框-->

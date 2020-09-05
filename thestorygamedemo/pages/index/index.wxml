@@ -1,0 +1,33 @@
+
+<!--index.wxml-->
+<view class="cu-bar bg-white bottom-solid">
+  <block>
+    <view>
+      <image class="cu-avatar round md " src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text style="margin-left:1rem">{{userInfo.nickName}}</text>
+    </view>
+  </block>
+</view>
+
+<view id="login-bar" class="cu-bar foot" wx:if="{{!hasUserInfo && canIUse}}">
+    <button class="cu-btn bg-green lg" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 微信授权 </button>
+</view>
+<view id="tab-bar" class="cu-bar tabbar foot" wx:else>
+  <view class="action" bindtap="navTo" data-target="editor/editor">
+    <view class="cuIcon-emoji"></view>
+  </view>
+  <view class="action">
+    <view class="cuIcon-emoji"></view>
+  </view>
+  <view class="action">
+    <view class="cuIcon-emoji"></view>
+  </view>
+</view>
+<view class="container">
+  <view class="userinfo">
+    
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>

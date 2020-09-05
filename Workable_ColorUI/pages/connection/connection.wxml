@@ -38,13 +38,13 @@
 </view>
 
 <!--发送栏-->
-<view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+<view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px;padding-top:10px;padding-bottom:10px">
   <view class="action">
     <text class="cuIcon-sound text-grey"></text>
   </view>
-  <input placeholder="{{chatContent[chatCount].question}}" class="solid-bottom" bindfocus="InputFocus" bindblur="InputBlur" adjust-position="{{false}}" focus="{{false}}" maxlength="300" cursor-spacing="10"></input>
+  <textarea placeholder="{{chatContent[chatCount].question}}" class="solid-bottom" bindfocus="InputFocus" bindblur="InputBlur" adjust-position="{{false}}" focus="{{false}}" maxlength="300" cursor-spacing="10" height="500px"></textarea>
   <view class="action">
-    <text class="cuIcon-emojifill text-grey"></text>
+    <text class="cuIcon-sound text-grey"></text>
   </view>
   <button class="basis-xs cu-btn bg-green shadow" bindtap="sendQuestion">发送</button>
 </view>

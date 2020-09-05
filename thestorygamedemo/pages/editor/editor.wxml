@@ -1,0 +1,27 @@
+<!--pages/editor/editor.wxml-->
+<view class="cu-bar bg-white bottom-solid">
+  <block>
+    <view>
+      <image class="cu-avatar round md " src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text style="margin-left:1rem">{{userInfo.nickName}}</text>
+    </view>
+  </block>
+</view>
+<view class="margin-sm padding-sm bg-white" >
+  <view class="flex" wx:for="{{data}}">
+    <view class="text-center">
+      <image class="cu-avatar round md" src="{{item.avatarUrl}}">{{item.info}}</image>
+        <view class="padding">{{item.info}}</view>
+    </view>
+      <view class="flex-sub padding ">{{item.text}}</view>
+  </view>
+</view>
+<view class="tabbar">
+  <view class="padding bg-white">
+    <textarea class="bg-white" id="input" placeholder="请将这个故事继续写下去！">
+    </textarea>
+  </view>
+  <view >
+    <view class="cu-btn block bg-green padding-sm margin-xs radius lg">提交</view>
+  </view>
+</view>
