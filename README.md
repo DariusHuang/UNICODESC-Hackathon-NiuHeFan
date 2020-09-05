@@ -12,3 +12,5 @@ Github Repo for Team 牛盒饭 at UNICODESC+Hackathon Sept. 2020
 9/5 17:43 上传可用的canvas测试project，移植了基于web的tilemap。  
    
 9/5 18:59 上传了部署了云开发环境的cloudStoryGame，并完成了上传与浏览历史故事接龙的功能
+
+9/6 01:56 上传了初步可用的explore模块，通过webview连接web页面实现，使用nodejs部署
