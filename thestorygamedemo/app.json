@@ -3,7 +3,7 @@
     "pages/index/index",
     "pages/editor/editor",
     "pages/explore/explore",
-    "pages/user"
+    "pages/user/user"
   ],
   "window": {
     "backgroundTextStyle": "light",
