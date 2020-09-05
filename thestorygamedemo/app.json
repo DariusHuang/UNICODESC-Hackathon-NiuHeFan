@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/editor/editor",
-    "pages/explore/explore"
+    "pages/explore/explore",
+    "pages/user"
   ],
   "window": {
     "backgroundTextStyle": "light",
