@@ -9,4 +9,6 @@ Github Repo for Team 牛盒饭 at UNICODESC+Hackathon Sept. 2020
   
 9/5 13:26 上传了云开发项目的代码Final.rar，云开发函数在history.js里面被调用，可以只看那一页
 
-9/5 17:43 上传可用的canvas测试project，移植了基于web的tilemap。
+9/5 17:43 上传可用的canvas测试project，移植了基于web的tilemap。  
+   
+9/5 18:59 上传了部署了云开发环境的cloudStoryGame，并完成了上传与浏览历史故事接龙的功能

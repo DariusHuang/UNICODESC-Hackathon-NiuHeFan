@@ -11,8 +11,8 @@ Page({
     local_canvas:{},
     map: {
       // From No scroll.js
-      cols: 8,
-      rows: 8,
+      cols: 12,
+      rows: 12,
       tsize: 64,
       tiles: [
           1, 3, 3, 3, 1, 1, 3, 1,
