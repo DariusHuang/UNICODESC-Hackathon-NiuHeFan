@@ -12,17 +12,17 @@
 <view id="login-bar" class="cu-bar foot" wx:if="{{!hasUserInfo && canIUse}}">
     <button class="cu-btn bg-green lg" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 微信授权 </button>
 </view>
-<view id="tab-bar" class="cu-bar tabbar foot" wx:else>
+<mp-tabbar id="tab-bar" class="cu-bar tabbar foot" wx:else>
   <view class="action" bindtap="navTo" data-target="editor/editor">
     <view class="cuIcon-emoji"></view>
   </view>
-  <view class="action">
+  <view class="action" bindtap="navTo" data-target="explore/explore">
     <view class="cuIcon-emoji"></view>
   </view>
   <view class="action">
     <view class="cuIcon-emoji"></view>
   </view>
-</view>
+</mp-tabbar>
 <view class="container">
   <view class="userinfo">
     

@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <title>Tilemaps examples - Collisions</title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="background:rgb(241,241,241)">
+    <canvas id="demo" width="512" height="512"></canvas>
+    <div id="modal" class="modal">
+      <div class="modal-dialouge modal-md">
+        <div class="modal-content">
+          <div class="modal-header">提示</div>
+          <div class="modal-body">
+            你找到了一篇题目为<span id="title" class="text-primary">xxx的旅行</span>的故事，请问你是否愿意为这个故事接龙？
+            <br />
+            <hr />
+            <div style="max-height:8rem;overflow-y:hidden">
+              小程序目前没有修改样式api，但是可以利用数据绑定实现动态改变样式，可以用view标签模拟page然后改变view标签的样式，以下案例演示了如果改变page背景颜色：小程序目前没有修改样式api，但是可以利用数据绑定实现动态改变样式，可以用view标签模拟page然后改变view标签的样式，以下案例演示了如果改变page背景颜色：...
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="$('#modal').modal('hide')">取消</button>
+            <button onclick="navEdit();" class="btn btn-success">确定</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div style="width:100%;background-color:white;position:absolute;bottom:0;padding:1rem;box-shadow: 0 0.125rem 1.25rem rgba(0,0,0,.075);">
+    <button class="btn btn-success" style="width:100%" onclick="back();">返回</button>
+  </div>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.3.0.js"></script>
+<script src="jquery.min.js"></script>
+<script src="jquery.cookie.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="common.js"></script>
+<script src="script.js"></script>
+<script>
+	console.log(window.__wxjs_environment === 'miniprogram');
+	function back(){
+		wx.miniProgram.redirectTo({
+			url:'/pages/index/index?test=testtest',
+			success: function(){
+				console.log('success')
+			},
+			fail: function(){
+				console.log('fail');
+			},
+			complete:function(){
+				console.log('complete');
+			}
+
+		});
+	}
+
+  function navEdit(){
+    wx.miniProgram.navigateTo({
+			url:'/pages/editor/editor?title=testtest',
+			success: function(){
+				console.log('success')
+			},
+			fail: function(){
+				console.log('fail');
+			},
+			complete:function(){
+				console.log('complete');
+			}
+
+		});
+  }
+</script>
+</body>
+</html>

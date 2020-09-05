@@ -1,0 +1,3 @@
+<!--pages/explore/explore.wxml-->
+<text>pages/explore/explore.wxml</text>
+<web-view src="http://localhost:2321/"></web-view>
