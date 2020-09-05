@@ -1,5 +1,6 @@
-// pages/editor/editor.js
 const app = getApp()
+// 云服务
+const db = wx.cloud.database()
 Page({
 
   /**
@@ -8,12 +9,42 @@ Page({
   data: {
     userinfo: app.globalData.userInfo,
     text: "osoakdoaksodkasd",
-    data: [
-      {info:'abc',text:'asdasdaz'},
-      {info:'zsa',text:'阿萨的那艘等哈都覅设计大奖哦i上帝啊是氨基酸都骄傲是第几哦i阿散井滴哦艾师傅阿松i电脑四点安排的较为人加我欧派人家破案我都判决按东坡判决按破地方我啊啊外婆都怕我放假哦啊我派飞机迫降安排爱神的箭哦啊搜集擦社交平怕我觉得破案苏东坡按时间都建安费【啊我怕我佛入网癖爱哦譬如高温费你无法'},
-      {info:'zsa',text:'阿萨的那艘等哈都覅设计大奖哦i上帝啊是氨基酸都骄傲是第几哦i阿散井滴哦艾师傅阿松i电脑四点安排的较为人加我欧派人家破案我都判决按东坡判决按破地方我啊啊外婆都怕我放假哦啊我派飞机迫降安排爱神的箭哦啊搜集擦社交平怕我觉得破案苏东坡按时间都建安费【啊我怕我佛入网癖爱哦譬如高温费你无法'},
-      {info:'zsa',text:'阿萨的那艘等哈都覅设计大奖哦i上帝啊是氨基酸都骄傲是第几哦i阿散井滴哦艾师傅阿松i电脑四点安排的较为人加我欧派人家破案我都判决按东坡判决按破地方我啊啊外婆都怕我放假哦啊我派飞机迫降安排爱神的箭哦啊搜集擦社交平怕我觉得破案苏东坡按时间都建安费【啊我怕我佛入网癖爱哦譬如高温费你无法'},
-      {info:'zsa',text:'阿萨的那艘等哈都覅设计大奖哦i上帝啊是氨基酸都骄傲是第几哦i阿散井滴哦艾师傅阿松i电脑四点安排的较为人加我欧派人家破案我都判决按东坡判决按破地方我啊啊外婆都怕我放假哦啊我派飞机迫降安排爱神的箭哦啊搜集擦社交平怕我觉得破案苏东坡按时间都建安费【啊我怕我佛入网癖爱哦譬如高温费你无法'}]
+    local_contactInfo:'ta没有公开联系方式O',
+    storyData:[],
+    currentStoryId:'110'// for testing purpose only
+  },
+  btnSubmitInfo:function(res){
+    var that = this
+    var author = app.globalData.userInfo.nickName
+    var authorAvatar = app.globalData.userInfo.avatarUrl
+    var _openid = app.globalData.openId
+    var storyContent = res.detail.value.storyContent
+    var contactInfo = that.data.local_contactInfo
+
+    db.collection('story'+that.data.currentStoryId).add({
+      data:{
+        author:author,
+        authorAvatar:authorAvatar,
+        storyContent:storyContent,
+        _openid:_openid,
+        storyContent:storyContent,
+        contactInfo:contactInfo
+      }
+    }).then(res=>{
+      console.log(res) //成功
+    })
+  },
+
+  getAllCurrentStoryContent:function(currentStoryId){
+    var that = this
+    db.collection('story'+currentStoryId).get({
+      success:res=>{
+        that.setData({
+          storyData:res.data
+        })
+        console.log(that.data.storyData)
+      }
+    })
   },
 
   /**
@@ -24,6 +55,7 @@ Page({
     this.setData({
       userInfo: app.globalData.userInfo
     })
+    this.getAllCurrentStoryContent(110)
   },
 
   /**

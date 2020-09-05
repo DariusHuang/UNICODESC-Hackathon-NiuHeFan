@@ -7,10 +7,11 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    openid:''
   },
-  onLoad: function (options) {
-    console.log(options);
+  onLoad: function () {
+    var that = this
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -37,6 +38,21 @@ Page({
         }
       })
     }
+    // 获取用户OpenId
+    this.getOpenId()
+  },
+  getOpenId:function(){
+    let that = this;
+    wx.cloud.callFunction({
+      name:'getOpenId',
+      complete:res=>{
+        var openid = res.result.openid;
+        that.setData({
+          openid:openid
+        })
+        app.globalData.openid = that.data.openid
+      }
+    })
   },
   getUserInfo: function(e) {
     console.log(e)

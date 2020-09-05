@@ -8,7 +8,7 @@
     </view>
   </block>
 </view>
-
+<editor></editor>
 <view id="login-bar" class="cu-bar foot" wx:if="{{!hasUserInfo && canIUse}}">
     <button class="cu-btn bg-green lg" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 微信授权 </button>
 </view>
@@ -19,7 +19,7 @@
   <view class="action" bindtap="navTo" data-target="explore/explore">
     <view class="cuIcon-emoji"></view>
   </view>
-  <view class="action">
+  <view class="action" bindtap="navTo" data-target="user/user">
     <view class="cuIcon-emoji"></view>
   </view>
 </mp-tabbar>
