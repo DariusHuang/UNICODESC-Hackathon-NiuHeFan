@@ -9,7 +9,7 @@ Github Repo for Team 牛盒饭 at UNICODESC+Hackathon Sept. 2020
 - [ColorUI](https://github.com/weilanwl/ColorUI)(已包含于项目中)
 - [gamedev-js-tiles](https://github.com/mozdevs/gamedev-js-tiles)(已包含于项目中)
 #### Steps：
-1. 使用`git clone https://github.com/DariusHuang/UNICODESC-Hackathon-NiuHeFan.git`将项目下载到本地
+1. 使用`git clone https://github.com/DariusHuang/UNICODESC-Hackathon-NiuHeFan.git <本地地址>`将项目下载到本地
 2. 通过微信开发者工具导入项目文件夹*cloudStoryGame/*
 3. 回到项目根目录输入`node web/server.js`
 4. 在微信开发者工具中*编译*  
