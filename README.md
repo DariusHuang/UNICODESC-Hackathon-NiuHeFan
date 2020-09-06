@@ -14,3 +14,15 @@ Github Repo for Team 牛盒饭 at UNICODESC+Hackathon Sept. 2020
 9/5 18:59 上传了部署了云开发环境的cloudStoryGame，并完成了上传与浏览历史故事接龙的功能
 
 9/6 01:56 上传了初步可用的explore模块，通过webview连接web页面实现，使用nodejs部署
+
+### 如何运行:
+requrirements: 
+- [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)
+- [微信云开发](https://cloud.tencent.com/solution/la)
+- [NodeJS](https://nodejs.org/en/)
+- ColorUI(已包含于项目中)
+
+1. 使用`git clone https://github.com/DariusHuang/UNICODESC-Hackathon-NiuHeFan.git`将项目下载到本地
+2. 通过微信开发者工具导入项目文件夹*thestorydemo/*
+3. 回到项目根目录输入`node web/server.js`
+4. 在微信开发者工具中点击*调试*
