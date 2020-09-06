@@ -13,21 +13,32 @@
 </view>
 <mp-tabbar id="tab-bar" class="cu-bar tabbar foot" wx:else>
   <view class="action" bindtap="navTo" data-target="editor/editor">
-    <view class="cuIcon-emoji"></view>
+    <view class="cuIcon-edit"></view>
+    <text>正在创作</text>
   </view>
   <view class="action" bindtap="navTo" data-target="explore/explore">
-    <view class="cuIcon-emoji"></view>
+    <view class="cuIcon-footprint"></view>
+    <text>探索</text>
   </view>
   <view class="action" bindtap="navTo" data-target="user/user">
-    <view class="cuIcon-emoji"></view>
+    <view class="cuIcon-people"></view>
+    <text>个人中心</text>
   </view>
 </mp-tabbar>
 <view class="cu-card case">
-  <view class="cu-item shadow">
+<view id="map1" bindtap="navExplore" class="cu-item shadow">
     <view class="image">
-      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="widthFix"></image>
+      <image src="../../assets/pic.png" mode="widthFix"></image>
       <view class="cu-bar bg-shadeBottom">
-        <text class="text-cut"><text class="cu-Icon-camera"></text> 摄影圈子的故事接龙</text>
+        <text class="text-cut"><text class="cu-Icon-camera"></text> 探索编程的故事接龙</text>
+      </view>
+    </view>
+  </view>
+  <view id="map2" bindtap="navExplore" class="cu-item shadow">
+    <view class="image">
+      <image src="https://s1.doyo.cn/imgfile/bdgame/202005/26/1590476703_7.jpg" mode="widthFix"></image>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut"><text class="cu-Icon-camera"></text> 探索摄影圈子的故事接龙</text>
       </view>
     </view>
   </view>

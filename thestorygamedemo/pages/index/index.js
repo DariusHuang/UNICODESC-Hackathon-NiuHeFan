@@ -63,9 +63,16 @@ Page({
     })
   },
   navTo: function(e) {
-    console.log(e.currentTarget.dataset.target);
     wx.navigateTo({
       url: "/pages/" + e.currentTarget.dataset.target,
+      success: function(res){
+        console.log("succeeded");
+      }
+    });
+  },
+  navExplore: function(){
+    wx.navigateTo({
+      url: "/pages/explore/explore",
       success: function(res){
         console.log("succeeded");
       }
