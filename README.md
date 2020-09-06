@@ -13,7 +13,7 @@ Github Repo for Team 牛盒饭 at UNICODESC+Hackathon Sept. 2020
 2. 通过微信开发者工具导入项目文件夹*cloudStoryGame/*
 3. 回到项目根目录输入`node web/server.js`
 4. 在微信开发者工具中*编译*  
-5（可选）. 观看根目录中的DemoVideo.mp4
+（可选）观看根目录中的DemoVideo.mp4
 
 ### Board:
 可以随手写一些进度/分工/更新通知：   
