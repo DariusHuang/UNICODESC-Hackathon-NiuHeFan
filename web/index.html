@@ -6,9 +6,13 @@
 	   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="bootstrap.min.css" rel="stylesheet">
     <style>
+      :root {
+        --btn-size: 5rem;
+      }
       .btn-control {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: var(--btn-size);
+        height: var(--btn-size);
+        font-size: calc(var(--btn-size) / 2);
         position: absolute;
       }
     </style>
@@ -16,14 +20,14 @@
 <body style="background:rgb(241,241,241)">
     <canvas id="demo" width="512" height="512"></canvas>
     <div class="container">
-      <div style="position:relative;left:calc(50% - (7.5rem + 20px)/2)">
-        <button id="btn-up" class="btn btn-success btn-control" style="left:calc(2.5rem + 10px)">↑</button>
-        <button id="btn-left"class="btn btn-success btn-control" style="top:calc(2.5rem + 10px)">←</button>
-        <button id="btn-down" class="btn btn-success btn-control" style="top:calc(2.5rem + 10px);left:calc(2.5rem + 10px)">↓</button>
-        <button id="btn-right" class="btn btn-success btn-control" style="top:calc(2.5rem + 10px);left:calc(5rem + 20px)">→</button>
+      <div style="position:relative;top:20px;left:calc(50% - (var(--btn-size) * 3 + 20px)/2)">
+        <button id="btn-up" class="btn btn-success btn-control" style="left:calc(var(--btn-size) + 10px)">↑</button>
+        <button id="btn-left"class="btn btn-success btn-control" style="top:calc(var(--btn-size) + 10px)">←</button>
+        <button id="btn-down" class="btn btn-success btn-control" style="top:calc(var(--btn-size) + 10px);left:calc(var(--btn-size) + 10px)">↓</button>
+        <button id="btn-right" class="btn btn-success btn-control" style="top:calc(var(--btn-size) + 10px);left:calc((var(--btn-size) + 10px) * 2)">→</button>
       </div>
     </div>
-    <div id="modal" class="modal">
+    <div id="modal" class="modal" data-backdrop="static">
       <div class="modal-dialouge modal-md">
         <div class="modal-content">
           <div class="modal-header">提示</div>
@@ -85,6 +89,8 @@
 
 		});
   }
+
+
 </script>
 </body>
 </html>

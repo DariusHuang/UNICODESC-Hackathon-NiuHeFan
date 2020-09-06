@@ -88,6 +88,26 @@ function getBookID(xs, ys){
 addBook(3,6,1);
 addBook(5,8,2);
 
+var Keyboard = {};
+
+Keyboard.pressedKey = ""
+
+Keyboard.LEFT = "←";
+Keyboard.RIGHT = "→";
+Keyboard.UP = "↑";
+Keyboard.DOWN = "↓";
+
+Keyboard.isDown = function(text){
+  return text == Keyboard.pressedKey;
+}
+
+$(".btn-control").on("touchstart", (e) => {
+  Keyboard.pressedKey = e.target.textContent;
+});
+$(".btn-control").on("touchend", (e) => {
+  Keyboard.pressedKey = "";
+});
+
 function Camera(map, width, height) {
     this.x = 0;
     this.y = 0;
@@ -177,6 +197,7 @@ Hero.prototype._collide = function (dirx, diry) {
     if(foundBook) {
       if(!triggerredBook){
         triggerredBook = true;
+        Keyboard.pressedKey = "";
         $("#editBtn").attr("data-bookID",getBookID([left,right,right,left],[top,top,bottom,bottom]))
         $("#modal").modal("show");
       }
@@ -219,8 +240,6 @@ Game.load = function () {
 };
 
 Game.init = function () {
-    Keyboard.listenForEvents(
-        [Keyboard.LEFT, Keyboard.RIGHT, Keyboard.UP, Keyboard.DOWN]);
     this.tileAtlas = Loader.getImage('tiles');
 
     this.hero = new Hero(map, 160, 160);
