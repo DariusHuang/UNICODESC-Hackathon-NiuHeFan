@@ -1,0 +1,13 @@
+<!-- pages/user.wxml -->
+
+<view class="container">
+  <view class="userinfo">
+    <block>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="userpage">
+    <text class="user-page">{{mypage}}</text>
+  </view>
+</view>

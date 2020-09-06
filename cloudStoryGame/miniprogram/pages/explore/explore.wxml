@@ -1,0 +1,6 @@
+<!--pages/explore/explore.wxml-->
+<text>loading...</text>
+<view style="width:100px">
+  <web-view src="http://localhost:2321/"></web-view>
+</view>
+

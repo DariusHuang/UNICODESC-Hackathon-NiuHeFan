@@ -1,0 +1,36 @@
+<!--pages/editor/editor.wxml-->
+<view class="cu-bar bg-white bottom-solid">
+  <block>
+    <view>
+      <image class="cu-avatar round md " src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text style="margin-left:1rem">{{userInfo.nickName}}</text>
+    </view>
+  </block>
+</view>
+
+<view class="cu-card dynamic {{isCard?'no-card':''}}">
+  <view class="cu-item shadow" wx:for="{{storyData}}">
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url({{item.authorAvatar}});"></view>
+        <view class="content flex-sub">
+          <view>第{{index+1}}节-{{item.author}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="text-content">
+      {{item.storyContent}}
+    </view>
+  </view>
+</view>
+
+
+<view class="tabbar">
+  <view class="padding bg-white">
+    <form bindsubmit="btnSubmitInfo">
+    <textarea name="storyContent" class="bg-white" id="input" placeholder="请将这个故事继续写下去！（下拉可刷新）">
+    </textarea>
+    <button form-type="submit" class="cu-btn block bg-green padding-sm margin-xs radius lg">提交</button>
+    </form>
+  </view>
+</view>
