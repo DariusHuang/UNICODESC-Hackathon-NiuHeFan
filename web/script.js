@@ -2,6 +2,7 @@ document.getElementById('demo').setAttribute('width', SIZE);
 document.getElementById('demo').setAttribute('height', SIZE);
 
 var triggerredBook = false;
+var bookDict = {};
 
 var map = {
     cols: 12,
@@ -28,9 +29,9 @@ var map = {
         4, 0, 0, 5, 0, 0, 0, 0, 0, 5, 0, 4,
         4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4,
         4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4,
-        4, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 4,
         4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4,
-        4, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 4,
+        4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4,
+        4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4,
         4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4,
         4, 4, 4, 0, 5, 4, 4, 4, 4, 4, 4, 4,
         4, 4, 4, 0, 0, 3, 3, 3, 3, 3, 3, 3
@@ -69,6 +70,23 @@ var map = {
         return row * this.tsize;
     }
 };
+
+function addBook(col, row, bookID){
+  map.layers[1][row * map.cols + col] = 6;
+  bookDict[row * map.cols + col] = bookID;
+}
+
+function getBookID(xs, ys){
+  for(i in xs){
+    if(bookDict[map.getRow(ys[i]) * map.cols + map.getCol(xs[i])] != undefined){
+      return bookDict[map.getRow(ys[i]) * map.cols + map.getCol(xs[i])];
+    }
+  }
+  return undefined;
+}
+
+addBook(3,6,1);
+addBook(5,8,2);
 
 function Camera(map, width, height) {
     this.x = 0;
@@ -159,6 +177,7 @@ Hero.prototype._collide = function (dirx, diry) {
     if(foundBook) {
       if(!triggerredBook){
         triggerredBook = true;
+        $("#editBtn").attr("data-bookID",getBookID([left,right,right,left],[top,top,bottom,bottom]))
         $("#modal").modal("show");
       }
     }

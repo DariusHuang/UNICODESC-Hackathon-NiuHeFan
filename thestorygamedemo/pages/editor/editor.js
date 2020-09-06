@@ -1,6 +1,6 @@
 const app = getApp()
 // 云服务
-const db = wx.cloud.database()
+//const db = wx.cloud.database()
 Page({
 
   /**
@@ -51,7 +51,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app.globalData.userInfo);
+    console.log(options);
     this.setData({
       userInfo: app.globalData.userInfo
     })

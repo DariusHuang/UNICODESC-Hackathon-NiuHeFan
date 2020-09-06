@@ -3,11 +3,26 @@
 <head>
     <title>Tilemaps examples - Collisions</title>
     <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="bootstrap.min.css" rel="stylesheet">
+    <style>
+      .btn-control {
+        width: 2.5rem;
+        height: 2.5rem;
+        position: absolute;
+      }
+    </style>
 </head>
 <body style="background:rgb(241,241,241)">
     <canvas id="demo" width="512" height="512"></canvas>
+    <div class="container">
+      <div style="position:relative;left:calc(50% - (7.5rem + 20px)/2)">
+        <button id="btn-up" class="btn btn-success btn-control" style="left:calc(2.5rem + 10px)">↑</button>
+        <button id="btn-left"class="btn btn-success btn-control" style="top:calc(2.5rem + 10px)">←</button>
+        <button id="btn-down" class="btn btn-success btn-control" style="top:calc(2.5rem + 10px);left:calc(2.5rem + 10px)">↓</button>
+        <button id="btn-right" class="btn btn-success btn-control" style="top:calc(2.5rem + 10px);left:calc(5rem + 20px)">→</button>
+      </div>
+    </div>
     <div id="modal" class="modal">
       <div class="modal-dialouge modal-md">
         <div class="modal-content">
@@ -22,7 +37,7 @@
           </div>
           <div class="modal-footer">
             <button class="btn btn-secondary" onclick="$('#modal').modal('hide')">取消</button>
-            <button onclick="navEdit();" class="btn btn-success">确定</button>
+            <button id="editBtn" onclick="navEdit();" data-bookID="" class="btn btn-success">确定</button>
           </div>
         </div>
       </div>
@@ -55,8 +70,9 @@
 	}
 
   function navEdit(){
+    var bookID = $("#editBtn").attr("data-bookID");
     wx.miniProgram.navigateTo({
-			url:'/pages/editor/editor?title=testtest',
+			url:`/pages/editor/editor?title=${bookID}`,
 			success: function(){
 				console.log('success')
 			},
